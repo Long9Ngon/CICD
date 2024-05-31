@@ -5,6 +5,6 @@ on:
 jobs:
   hello-branch:
     runs-on: ubuntu-latest
-    environment: ${{ (github.ref_name == 'dev' || github.ref_name == 'n4') && '' || 'approve' }}
+    environment: ${{ (github.ref_name == 'dev' || github.ref_name == 'n4') && 'dev' || 'approve' }}
     steps:
       - run: echo hello ${{ github.ref_name}}
